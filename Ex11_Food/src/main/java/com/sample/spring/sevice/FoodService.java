@@ -1,4 +1,4 @@
-package com.sample.spring.service;
+package com.sample.spring.sevice;
 
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -57,7 +57,10 @@ public class FoodService {
 			CreateAndEditFoodRequest request
 			) {
 		FoodEntity food = foodRepository.findById(foodId).orElseThrow(()->new RuntimeException("no food"));
-		food.changeNameAndAddress(request.getName(), request.getAddress());
+		food.changeNameAndAddress(
+				request.getName(), 
+				request.getAddress()
+				);
 		foodRepository.save(food);
 		
 		List<MenuEntity> menus = menuRepository.findAllByFoodId(foodId); 
@@ -122,6 +125,9 @@ public class FoodService {
 				.build();
 		
 	}
+	
+	
+	
 	
 	
 }

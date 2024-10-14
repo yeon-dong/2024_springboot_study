@@ -16,7 +16,7 @@ import com.sample.spring.api.request.CreateAndEditFoodRequest;
 import com.sample.spring.api.response.FoodDetailView;
 import com.sample.spring.api.response.FoodView;
 import com.sample.spring.model.FoodEntity;
-import com.sample.spring.service.FoodService;
+import com.sample.spring.sevice.FoodService;
 
 @RestController
 public class FoodApi {
@@ -37,7 +37,7 @@ public class FoodApi {
 	}
 	
 	
-	// #################
+	// #######################################
 	
 	@PostMapping("/food")
 	public FoodEntity postFood(
