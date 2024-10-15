@@ -1,13 +1,10 @@
-package com.sample.spring.repository;
+package com.sample.spring.repository.search;
 
 import org.springframework.data.domain.Page;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.sample.spring.dto.PageRequestDto;
 import com.sample.spring.model.TodoEntity;
 
-public interface TodoRepository extends JpaRepository<TodoEntity, Long> {
-
+public interface TodoSearch {
 	Page<TodoEntity> search1(PageRequestDto pageRequestDto);
-
 }
