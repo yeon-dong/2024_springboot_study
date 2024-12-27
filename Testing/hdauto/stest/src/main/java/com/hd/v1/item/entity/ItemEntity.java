@@ -1,6 +1,4 @@
 package com.hd.v1.item.entity;
-
-
 import com.hd.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Builder;
