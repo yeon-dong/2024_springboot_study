@@ -98,7 +98,7 @@ public class ControllerSaveTest {
         resultActions.andExpect(status().isOk())
                 .andExpect(jsonPath("$.state").value(400))
                 .andExpect(jsonPath("$.error.[0].field").value("name"))
-                .andExpect(jsonPath("$.error.[0].message").value("Name cannot be empty"));
+                .andExpect(jsonPath("$.error.[0].message").value("Name can not be empty"));
     }
 
     // Validated Price
@@ -124,7 +124,7 @@ public class ControllerSaveTest {
         resultActions.andExpect(status().isOk())
                 .andExpect(jsonPath("$.state").value(400))
                 .andExpect(jsonPath("$.error.[0].field").value("price"))
-                .andExpect(jsonPath("$.error.[0].message").value("10이상이어야함"));
+                .andExpect(jsonPath("$.error.[0].message").value("10 이상이어야 합니다"));
     }
 
     // Duplicated Name Exception
@@ -153,7 +153,7 @@ public class ControllerSaveTest {
         resultActions.andDo(print());
         resultActions.andExpect(status().isOk())
                 .andExpect(jsonPath("$.state").value(500))
-                .andExpect(jsonPath("$.massage").value(ErrorCode.NAME_DUPLICATED.getErrorMessage()))
+                .andExpect(jsonPath("$.message").value(ErrorCode.NAME_DUPLICATED.getErrorMessage()))
                 .andExpect(jsonPath("$.data.errorCode").value(ErrorCode.NAME_DUPLICATED.getErrorCode()));
     }
 
