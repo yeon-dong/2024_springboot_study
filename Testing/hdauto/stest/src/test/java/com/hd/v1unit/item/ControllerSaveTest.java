@@ -37,6 +37,7 @@ public class ControllerSaveTest {
     @MockBean
     ItemService itemService;
 
+
     private ObjectMapper objectMapper;
 
     @BeforeEach
@@ -98,7 +99,7 @@ public class ControllerSaveTest {
         resultActions.andExpect(status().isOk())
                 .andExpect(jsonPath("$.state").value(400))
                 .andExpect(jsonPath("$.error.[0].field").value("name"))
-                .andExpect(jsonPath("$.error.[0].message").value("Name can not be empty"));
+                .andExpect(jsonPath("$.error.[0].message").value("Name cannot be empty"));
     }
 
     // Validated Price
@@ -124,7 +125,7 @@ public class ControllerSaveTest {
         resultActions.andExpect(status().isOk())
                 .andExpect(jsonPath("$.state").value(400))
                 .andExpect(jsonPath("$.error.[0].field").value("price"))
-                .andExpect(jsonPath("$.error.[0].message").value("10 이상이어야 합니다"));
+                .andExpect(jsonPath("$.error.[0].message").value("10이상이어야함"));
     }
 
     // Duplicated Name Exception
