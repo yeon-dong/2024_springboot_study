@@ -1,0 +1,9 @@
+= 다국어 텍스트 요소 삭제
+
+== Request
+include::{snippets}/text-delete/curl-request.adoc[]
+
+
+== Response
+include::{snippets}/text-delete/http-response.adoc[]
+include::{snippets}/text-delete/response-fields.adoc[]

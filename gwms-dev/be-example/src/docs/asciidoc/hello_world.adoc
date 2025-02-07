@@ -1,0 +1,10 @@
+= Rest Docs 예제
+
+== Request
+include::{snippets}/index-hello/curl-request.adoc[]
+
+
+== Response
+include::{snippets}/index-hello/http-response.adoc[]
+include::{snippets}/index-hello/response-body.adoc[]
+include::{snippets}/index-hello/response-fields.adoc[]

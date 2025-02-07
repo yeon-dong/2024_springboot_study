@@ -1,0 +1,99 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.5'
+    id 'io.spring.dependency-management' version '1.1.6'
+    id "org.asciidoctor.jvm.convert" version "3.3.2"
+}
+
+group = 'com.hyundai-autoever'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+configurations {
+    asciidoctorExt  // asciidoctor Extension을 위한 설정
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+// https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter
+    implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '3.0.3'
+
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.mariadb.jdbc:mariadb-java-client'
+
+    runtimeOnly 'com.h2database:h2'
+
+    asciidoctorExt 'org.springframework.restdocs:spring-restdocs-asciidoctor'
+    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'  // 테스트로 restdocs를 통하여 API명세서를 생성하기 위한 의존성
+
+    // QueryDsl 설정
+    implementation 'com.querydsl:querydsl-jpa:5.1.0:jakarta'
+    annotationProcessor "com.querydsl:querydsl-apt:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api"
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+// QueryDsl
+def querydslSrcDir = 'src/main/generated'
+
+clean {
+    delete file(querydslSrcDir)
+}
+
+ext {
+    snippetsDir = file('build/generated-snippets') // snippet 생성경로를 지정
+}
+
+test {
+    outputs.dir snippetsDir // 테스트 결과를 이전에 지정한 snippetsDir에 생성
+}
+
+asciidoctor {
+    inputs.dir snippetsDir // asciidoctor가 snippetsDir을 읽어옴
+    configurations 'asciidoctorExt'  // asciidoctor Extension을 이용
+    dependsOn test // test이후에 asciidoctor task를 수행하기 위함.(dependsOn은, 파라미터로 들어온 task 이후에 dependsOn이 선언된 task를 진행하겠다는 옵션)
+}
+
+asciidoctor.doFirst { // asciidoctor Task가 수행될 때 가장 먼저 수행
+    delete file('src/main/resources/static/docs')
+}
+
+tasks.register('copyDocument', Copy) { // 생성된 html 파일을 옮긴다
+    dependsOn asciidoctor // Gradle의 asciidoctor Task 이후 수행
+    from asciidoctor.outputDir // 기본 asccidoctor.outputDir은 build/docs/asciidoc
+    into file("src/main/resources/static/docs")
+}
+
+bootJar {
+    dependsOn asciidoctor
+    from ("${asciidoctor.outputDir}/html5") {
+        into 'static/docs'
+    }
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hyundaiautoever.beexample.infrastructure.mapper.TextElementMapper">
+    <select id="findBy" parameterType="map" resultType="TextElementDto">
+        select a.id,
+               text_code as textCode,
+               a.locale as locale,
+               description
+        from text_element a, web_page_text_element b, web_page c
+        where a.id  = b.text_element_id
+          and b.web_page_id = c.id
+          and c.uri = #{uri}
+          and a.locale = #{locale}
+        order by a.id;
+    </select>
+
+    <select id="existBy" parameterType="String" resultType="TextElementDto">
+        SELECT id,
+        text_code,
+        locale,
+        description
+        from text_element
+        limit 1;
+
+    </select>
+</mapper>

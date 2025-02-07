@@ -1,0 +1,9 @@
+= 다국어 텍스트 요소 수정
+
+== Request
+include::{snippets}/text-modify/curl-request.adoc[]
+
+
+== Response
+include::{snippets}/text-modify/http-response.adoc[]
+include::{snippets}/text-modify/response-fields.adoc[]

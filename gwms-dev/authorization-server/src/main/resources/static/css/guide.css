@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* guide.css */
+/* 가이드 컴포넌트 확인용 파일로, 실제 페이지에서는 사용되지 않습니다 */
+.guide-wrapper .guide-top {
+  padding: 30px 50px;
+  background-color: var(--primary);
+}
+.guide-wrapper .guide-label {
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+}
+.guide-wrapper .guide-title {
+  padding: 12px 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+}
+.guide-wrapper .guide-middle {
+  margin-top: 30px;
+  padding: 30px 0 70px;
+}
+.guide-wrapper .guide-middle .guide-box {
+  padding: 10px 50px;
+}
+.guide-wrapper .guide-middle .guide-box + * {
+  margin-top: 40px;
+}
+.guide-wrapper .guide-middle .guide-box-header .title {
+  font-size: 20px;
+  font-weight: 700;
+}
+.guide-wrapper .guide-middle .guide-box-body {
+  margin-top: 40px;
+}
+.guide-wrapper .guide-middle .guide-box-body .box-content {
+  display: flex;
+  gap: 50px;
+}
+.guide-wrapper .guide-middle .guide-box-body .box-content + * {
+  margin-top: 30px;
+}
+.guide-wrapper .guide-middle .guide-box-body .box-content .field-container {
+  margin: 0;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJndWlkZS5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFBQTtBQUNBO0FBS0U7RUFDRTtFQUNBOztBQUVGO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7O0FBRUY7RUFDRTtFQUNBO0VBQ0E7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBRUE7RUFDRTs7QUFFQTtFQUNFOztBQUlGO0VBQ0U7RUFDQTs7QUFHSjtFQUNFOztBQUNBO0VBQ0U7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0UiLCJmaWxlIjoiZ3VpZGUuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyogZ3VpZGUuY3NzICovXG4vKiDqsIDsnbTrk5wg7Lu07Y+s64SM7Yq4IO2ZleyduOyaqSDtjIzsnbzroZwsIOyLpOygnCDtjpjsnbTsp4Dsl5DshJzripQg7IKs7Jqp65CY7KeAIOyViuyKteuLiOuLpCAqL1xuLmd1aWRlLXdyYXBwZXIge1xuICAuZ3VpZGUtYXJlYSB7XG4gIH1cblxuICAuZ3VpZGUtdG9wIHtcbiAgICBwYWRkaW5nOiAzMHB4IDUwcHg7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tcHJpbWFyeSk7XG4gIH1cbiAgLmd1aWRlLWxhYmVsIHtcbiAgICBwYWRkaW5nOiAxMHB4IDA7XG4gICAgZm9udC1zaXplOiAyMHB4O1xuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgY29sb3I6ICNmZmY7XG4gIH1cbiAgLmd1aWRlLXRpdGxlIHtcbiAgICBwYWRkaW5nOiAxMnB4IDA7XG4gICAgZm9udC1zaXplOiAzMHB4O1xuICAgIGZvbnQtd2VpZ2h0OiA3MDA7XG4gICAgY29sb3I6ICNmZmY7XG4gIH1cblxuICAuZ3VpZGUtbWlkZGxlIHtcbiAgICBtYXJnaW4tdG9wOiAzMHB4O1xuICAgIHBhZGRpbmc6IDMwcHggMCA3MHB4O1xuXG4gICAgLmd1aWRlLWJveCB7XG4gICAgICBwYWRkaW5nOiAxMHB4IDUwcHg7XG5cbiAgICAgICYgKyAqIHtcbiAgICAgICAgbWFyZ2luLXRvcDogNDBweDtcbiAgICAgIH1cbiAgICB9XG4gICAgLmd1aWRlLWJveC1oZWFkZXIge1xuICAgICAgLnRpdGxlIHtcbiAgICAgICAgZm9udC1zaXplOiAyMHB4O1xuICAgICAgICBmb250LXdlaWdodDogNzAwO1xuICAgICAgfVxuICAgIH1cbiAgICAuZ3VpZGUtYm94LWJvZHkge1xuICAgICAgbWFyZ2luLXRvcDogNDBweDtcbiAgICAgIC5ib3gtY29udGVudCB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICAgIGdhcDogNTBweDtcblxuICAgICAgICAmICsgKiB7XG4gICAgICAgICAgbWFyZ2luLXRvcDogMzBweDtcbiAgICAgICAgfVxuXG4gICAgICAgIC5maWVsZC1jb250YWluZXJ7XG4gICAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICB9XG4gICAgICB9XG4gICAgfVxuICB9XG59XG4iXX0= */

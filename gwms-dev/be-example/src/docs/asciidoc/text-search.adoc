@@ -1,0 +1,9 @@
+= 다국어 텍스트 요소 조회
+
+== Request
+include::{snippets}/text-search/curl-request.adoc[]
+
+
+== Response
+include::{snippets}/text-search/http-response.adoc[]
+include::{snippets}/text-search/response-fields.adoc[]

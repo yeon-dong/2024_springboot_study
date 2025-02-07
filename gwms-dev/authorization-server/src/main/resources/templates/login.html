@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <title>GWMS</title>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/pages/user.css}">
+    <script th:src="@{/js/common.js}" defer></script>
+
+    <!-- Favicon-->
+    <link rel="shortcut icon" th:href="@{/images/favicon.png}" type="image/x-icon"/>
+</head>
+<body>
+<div class="wrapper user">
+    <!-- info: 다른 페이지와 구분할 수 있는 특별한 클래스(user) 가 추가됩니다. -->
+    <!-- main-container -->
+    <main class="main-container">
+        <!-- content-container -->
+        <div class="main-area">
+            <div class="user-container">
+                <div class="user-area">
+                    <h1 class="logo-box">
+                        <img th:src="@{/images/logo.svg}" class="logo" alt="HYUNDAI MOTOR GROUP" />
+                    </h1>
+                    <div class="main-desc-box">
+                        <p class="main-desc">Global Warranty System</p>
+                    </div>
+                    <form method="post" th:action="@{/login}">
+                        <div class="user-input-box">
+                            <div class="user-box-top">
+                                <h2 class="title">Login</h2>
+                            </div>
+                            <div class="user-box-middle">
+                                <div class="fieldwrap-container">
+                                    <!-- Input ID -->
+                                    <!-- .type-error : 오류 케이스 -->
+                                    <!-- .input-icon : icon 케이스 -->
+                                    <div class="field-container input-icon">
+                                        <div class="field-area">
+                                            <div class="field-input-box">
+                                                <input type="text" name="username" id="username" class="input-text" placeholder="아이디를 입력하세요" value="" autocomplete=" off" />
+                                                <button type="button" class="btn-delete" title="삭제"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Input PASSWORD -->
+                                    <!-- .input-icon : icon 케이스 -->
+                                    <!-- .input-password : password 타입 -->
+                                    <div class="field-container input-icon input-password">
+                                        <div class="field-area">
+                                            <div class="field-input-box">
+                                                <input type="password" name="password" id="password" class="input-text" placeholder="비밀번호를 입력하세요" value="" autocomplete=" off" />
+                                                <button type="button" class="btn-delete" title="삭제"></button>
+                                                <button type="button" class="btn-view" title="비밀번호 확인"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- ID & PASSWORD 불일치 문구box -->
+                                <div class="match-desc-box" th:if="${errorMsg}">
+                                    <p class="match-desc" th:text="${errorMsg}"></p>
+                                </div>
+                            </div>
+                            <div class="user-box-bottom">
+                                <div class="button-box">
+                                    <button type="submit" class="btn btn-fill btn-primary large">
+                                        <span>로그인</span>
+                                    </button>
+                                </div>
+                                <div class="link-box">
+<!--                                    <a th:href="@{|${resourceServerBaseUrl}/signup?client_id=${clientId}|}" class="btn-link">회원가입</a>-->
+<!--                                    <div class="divider"></div>-->
+<!--                                    <a th:href="@{/reset/password}" class="btn-link">비밀번호 재설정</a>-->
+<!--                                    <div class="divider"></div>-->
+<!--                                    <a href="#" class="btn-modal" data-modal='modal-01'>계정 등록 요청</a>-->
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- // main-container -->
+</div>
+</body>
+</html>

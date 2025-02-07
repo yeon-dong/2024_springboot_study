@@ -1,0 +1,15 @@
+
+### Access Token 발급
+POST http://localhost:1234/oauth2/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type = authorization_code &
+code = tWxCxgVQ8Vx5CVYdhOeMpCu5N3HWDCYDu9Azc8oaMJYm9NDHo-Ow4Sr1G_lQzgG9Dg8zbmSemogn9H5bqpq97qAGqTXTBRL0CWiHo0MQ7AP25iuwIhCcML-Z0kfvUhJb &
+client_id = gwms &
+client_secret = secret &
+redirect_uri = http://localhost:8080/code
+
+### 코드 요청 (브라우저 실행)
+GET http://localhost:1234/oauth2/authorize?response_type=code&client_id=gwms&redirect_uri=http://localhost:8080/code&scope=openid
+
+

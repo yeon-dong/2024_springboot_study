@@ -1,0 +1,9 @@
+= WebPageTextElementList 저장
+
+== Request
+include::{snippets}/text-mapping-list/curl-request.adoc[]
+
+
+== Response
+include::{snippets}/text-mapping-list/http-response.adoc[]
+include::{snippets}/text-mapping-list/response-fields.adoc[]

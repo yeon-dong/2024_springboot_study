@@ -1,0 +1,9 @@
+= 다국어 텍스트 요소 등록
+
+== Request
+include::{snippets}/text-register/curl-request.adoc[]
+
+
+== Response
+include::{snippets}/text-register/http-response.adoc[]
+include::{snippets}/text-register/response-fields.adoc[]
